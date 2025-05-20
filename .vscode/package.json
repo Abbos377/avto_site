@@ -1,0 +1,21 @@
+{
+  "name": "avto-salon",
+  "version": "1.0.0",
+  "description": "Avto Salon sayti uchun backend va frontend loyihasi",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["avto salon", "cars", "backend", "frontend"],
+  "author": "Sarvarbek Nuraddinov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

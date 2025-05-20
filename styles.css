@@ -1,0 +1,598 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+    color: #1e1a3c;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-shadow: none;
+}
+
+header {
+    background: #1a3c34;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+nav a {
+    color: #a6ff00;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+    flex: 1 0 auto;
+}
+
+#home, #cars, #about, #contact {
+    padding: 40px 20px;
+    text-align: center;
+    flex: 1 0 auto;
+    background: #ffffff;
+    color: #1a3c34;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #1a3c34;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #1a3c34;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #145c4a;
+}
+
+.car-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.car-item {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #1a3c34;
+    text-shadow: none;
+}
+
+.car-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.car-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.car-item h3 {
+    margin: 10px 0;
+    font-size: 22px;
+    color: #1a3c34;
+}
+
+.car-item p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.details-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #1a3c34;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.details-button:hover {
+    background: #145c4a;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+
+#modalImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#modalTitle {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #1a3c34;
+}
+
+#modalDetails {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.buy-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.buy-button:hover {
+    background: #218838;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filters input, .filters select {
+    padding: 10px;
+    font-size: 18px; /* Yozuv o‘lchami 16px dan 18px ga o‘zgartirildi */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-details, .contact-email {
+    margin-bottom: 20px;
+}
+
+.contact-details p, .contact-email p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.contact-details i, .contact-email i {
+    margin-right: 10px;
+    color: #1a3c34;
+}
+
+.contact-email p {
+    font-weight: bold;
+    color: #000;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-size: 16px;
+    text-align: left;
+    color: #1a3c34;
+}
+
+form input, form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+form textarea {
+    height: 100px;
+    resize: none;
+}
+
+form button {
+    padding: 10px;
+    background: #1a3c34;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #145c4a;
+}
+
+#success-message {
+    margin-top: 20px;
+    padding: 15px;
+    background: #d4edda;
+    color: #155724;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
+    font-size: 16px;
+    text-align: center;
+}
+
+#error-message {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8d7da;
+    color: #721c24;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+    font-size: 16px;
+    text-align: center;
+}
+
+#why-us {
+    padding: 40px 20px;
+    background: #ffffff;
+    color: #1a3c34;
+}
+
+#why-us ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#why-us li {
+    background: #ffffff;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    color: #1a3c34;
+}
+
+#testimonials {
+    padding: 40px 20px;
+    background: #ffffff;
+    color: #1a3c34;
+}
+
+.testimonial {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    color: #1a3c34;
+}
+
+.testimonial p {
+    font-style: italic;
+    color: #333333;
+}
+
+footer {
+    background: #1a3c34;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #ffd700;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #fff;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #1a3c34;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .car-item {
+        width: 100%;
+        max-width: 350px;
+    }
+    nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #1a3c34;
+    }
+    nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+    nav a {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+    .hamburger {
+        display: block;
+    }
+    .logo img {
+        max-height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .car-item {
+        width: 100%;
+        max-width: 300px;
+    }
+    nav a {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+    .logo img {
+        max-height: 30px;
+    }
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Kontakt bo‘limi */
+#contact {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+#contact-form input,
+#contact-form textarea,
+#contact-form button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#contact-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Modal oyna */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7); /* Tinchroq fon */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Gradient fon */
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 550px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transform: scale(0.8);
+    animation: scaleIn 0.3s ease forwards; /* Animatsiya */
+}
+
+@keyframes scaleIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ff4d4d; /* Qizil rang */
+    transition: transform 0.2s ease;
+}
+
+.close:hover {
+    transform: rotate(90deg);
+}
+
+.modal img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.modal h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.modal p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.buy-button {
+    background: linear-gradient(90deg, #28a745, #218838); /* Gradient tugma */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+    transition: transform 0.1s ease, background 0.3s ease;
+}
+
+.buy-button:hover {
+    background: linear-gradient(90deg, #218838, #1e7e34);
+    transform: translateY(-2px);
+}
